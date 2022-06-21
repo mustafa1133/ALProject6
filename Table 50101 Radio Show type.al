@@ -1,6 +1,5 @@
 table 50101 "Radio Show Type"
 {
-    DataClassification = ToBeClassified;
 
     fields
     {
