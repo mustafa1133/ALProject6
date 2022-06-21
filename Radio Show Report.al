@@ -2,6 +2,8 @@ report 50100 "Radio Shows"
 {
     UsageCategory = ReportsAndAnalysis; // used to determine where report will be listed
     ApplicationArea = Basic;// Access Level for the user
+    WordLayout = 'RadioShows.docx';
+    DefaultLayout = Word;
 
     dataset
     {
@@ -17,8 +19,6 @@ report 50100 "Radio Shows"
             column("AudienceShare"; "Audience Share") { }
             column("AdvertisingRevenue"; "Advertising Revenue") { }
             column("RoyaltyCost"; "Royalty Cost") { }
-
-
 
         }
     }
