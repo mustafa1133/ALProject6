@@ -20,7 +20,7 @@ table 50100 "Radio Show"
         field(1040; "News Duration"; Duration) { }
         field(1050; "Sports Required"; Boolean) { InitValue = true; }
         field(1060; "Sports Duration"; Duration) { }
-        field(1070; "Weather Required"; Boolean) { InitValue = true }
+        field(1070; "Weather Required"; Boolean) { InitValue = true; }
         field(1080; "Weather Duration"; Duration) { }
         field(1090; "Date Filter"; Date) { FieldClass = FlowFilter; }
 
