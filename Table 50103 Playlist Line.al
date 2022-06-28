@@ -17,5 +17,11 @@ table 50103 "Playlist Line"
 
     }
 
-
+    keys
+    {
+        key(PK; "Document No.", "Line No.") // Document No. will not always be unique it needs a Line No. to maintain uniquness
+        {
+            Clustered = true;
+        }
+    }
 }
