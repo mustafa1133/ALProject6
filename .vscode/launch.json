@@ -9,6 +9,7 @@
             "server": "http://BC18",
             "serverInstance": "BC",
             "authentication": "UserPassword",
+            "schemaUpdateMode": "Recreate",
             "startupObjectId": 50103    ,
             "startupObjectType": "Page",
             "breakOnError": true,
