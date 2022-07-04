@@ -42,13 +42,24 @@ table 50100 "Radio Show"
         {
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = sum("Radio Show Entry"."Fee Amount" // summing revenue and puting a filter set to Advertisement
+            CalcFormula = sum("Radio Show Entry"."Fee Amount" // summing revenue and putting a filter set to Advertisement
             where(
                 "Radio Show No." = field("No."),
                 "Data Format" = filter(Advertisement)
                 ));
         }
-        field(130; "Royalty Cost"; Decimal) { }
+        field(130; "Royalty Cost"; Decimal)
+        {
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = sum("Radio Show Entry"."Fee Amount"
+            where(
+                "Radio Show No." = field("No."),
+                "Date" = field("Date Filter"),
+                "Data Format" = filter(Vinly | CD | MP3)
+            ));
+
+        }
         field(1000; "Frequency"; Option) { OptionMembers = Hourly,Daily,Weekly,Monthly; }
         field(1010; "PSA Planned Quantity"; Integer) { }
         field(1020; "Ads Planned Quantity"; Integer) { }
