@@ -2,6 +2,9 @@ page 50100 "Radio Show List"
 {
     PageType = List;
     SourceTable = "Radio Show";
+    ApplicationArea = Basic;
+    UsageCategory = Lists;
+    CardPageId = "Radio Show Card";
 
     layout
     {
