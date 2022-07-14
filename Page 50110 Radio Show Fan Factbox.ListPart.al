@@ -1,6 +1,6 @@
 page 50110 "Radio Show Fan Factbox"
 {
-    PageType = Card;
+    PageType = ListPart;
     SourceTable = "Radio Show Fan";
 
     layout
