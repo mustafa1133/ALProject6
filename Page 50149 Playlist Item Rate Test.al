@@ -15,7 +15,7 @@ page 50149 "Playlist Item Rate Test"
                 {
                     ApplicationArea = All;
                     Editable = false;
-                    Caption = 'Test caption';
+                    Caption = 'Item Numero';
                     ToolTip = 'This is a test of using Tooltips';
 
 
