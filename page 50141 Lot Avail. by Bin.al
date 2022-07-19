@@ -11,11 +11,11 @@ page 50141 "Lot Avail. by Bin"
         {
             repeater(Group)
             {
-                field("Item No."; "Item No." { ApplicationArea = Basic; }
-                field("Location Code"; "Location Code" { ApplicationArea = Basic; }
-                field("Bin Code"; "Bin Code" { ApplicationArea = Basic; }
-                field("Serial No."; "Serial No." { ApplicationArea = Basic; }
-                field("Quantity"; "Quantity" { ApplicationArea = Basic; }
+                field("Item No."; "Item No.") { ApplicationArea = Basic; }
+                field("Location Code"; "Location Code") { ApplicationArea = Basic; }
+                field("Bin Code"; "Bin Code") { ApplicationArea = Basic; }
+                field("Serial No."; "Serial No.") { ApplicationArea = Basic; }
+                field("Quantity"; "Quantity") { ApplicationArea = Basic; }
 
             }
         }
