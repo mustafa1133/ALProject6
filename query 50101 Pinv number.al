@@ -4,26 +4,18 @@ query 50101 "Pinv number"
 
     elements
     {
-        dataitem(Customer_Ledger; "Cust. Ledger Entry")
+        dataitem(Sales_Invoice_Header; "Sales Invoice Header")
         {
-            column(Entry_No_; "Entry No.") { }
-            column(Document_No_; "Document No.") { }
-            column(Document_Type; "Document Type") { }
 
-            dataitem(Sales_Invoice_Header; "Sales Invoice Header")
+            column(No_; "No.") { }
+
+            dataitem(Sales_Invoice_Line; "Sales Invoice Line")
             {
-                DataItemLink = "No." = "Customer_Ledger"."Document No.";
+                ;
+                DataItemLink = "Document No." = "Sales_Invoice_Header"."No.";
+                DataItemTableFilter = "No." = filter('2000-S');
 
-                column(No_; "No.") { }
-
-                dataitem(Sales_Invoice_Line; "Sales Invoice Line")
-                {
-                    ;
-                    DataItemLink = "Document No." = "Sales_Invoice_Header"."No.";
-                    DataItemTableFilter = "No." = filter('2000-S');
-
-                    column(Line_No_; "Line No.") { }
-                }
+                column(Line_No_; "Line No.") { }
             }
         }
     }

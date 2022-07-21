@@ -2,7 +2,7 @@ page 50138 "Pinv number"
 {
     PageType = List;
     UsageCategory = Lists;
-    SourceTable = "Sales Invoice Line";
+    SourceTable = "Sales Invoice Header";
     SourceTableTemporary = true;
 
     layout
@@ -11,8 +11,7 @@ page 50138 "Pinv number"
         {
             repeater(Group)
             {
-                field("Document No."; "Document No.") { }
-                field("Line No."; "Line No.") { }
+                field("No."; "No.") { }
             }
         }
     }
@@ -23,8 +22,7 @@ page 50138 "Pinv number"
         HasItemNo.Open;
         while HasItemNo.Read do begin
             Init;
-            "Document No." := HasItemNo.Document_No_;
-            "Line No." := HasItemNo.Line_No_;
+            "No." := HasItemNo.No_;
 
             Insert;
 
