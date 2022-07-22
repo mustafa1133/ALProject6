@@ -2,8 +2,7 @@ page 50138 "Pinv number"
 {
     PageType = List;
     UsageCategory = Lists;
-    SourceTable = "Sales Invoice Header";
-    SourceTableTemporary = true;
+    SourceTable = "Pinv Number";
 
     layout
     {
@@ -21,11 +20,11 @@ page 50138 "Pinv number"
     begin
         HasItemNo.Open;
         while HasItemNo.Read do begin
-            Init;
-            "No." := HasItemNo.No_;
+            rec.Init;
+            rec."No." := HasItemNo.No_;
 
-            Insert;
-
+            rec.Insert();
+            //currpage update
         end;
 
     end;
