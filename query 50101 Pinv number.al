@@ -13,7 +13,7 @@ query 50101 "Pinv number"
             {
                 ;
                 DataItemLink = "Document No." = "Sales_Invoice_Header"."No.";
-                DataItemTableFilter = "No." = filter('2000-S');
+                DataItemTableFilter = "Drop Shipment" = const(false);
 
                 column(Line_No_; "Line No.") { }
             }

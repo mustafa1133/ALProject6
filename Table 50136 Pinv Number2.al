@@ -1,10 +1,9 @@
-table 50137 "Pinv Number"
+table 50136 "Pinv Number2"
 {
 
 
     fields
     {
-        field(1; "No."; Code[20]) { }
         field(10; "Document Number"; Text[50]) { }
     }
 

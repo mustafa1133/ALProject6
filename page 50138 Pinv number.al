@@ -2,7 +2,7 @@ page 50138 "Pinv number"
 {
     PageType = List;
     UsageCategory = Lists;
-    SourceTable = "Pinv Number";
+    SourceTable = "Pinv Number2";
 
     layout
     {
@@ -10,7 +10,7 @@ page 50138 "Pinv number"
         {
             repeater(Group)
             {
-                field("No."; "No.") { }
+                field("Document Number"; "Document Number") { }
             }
         }
     }
@@ -18,13 +18,14 @@ page 50138 "Pinv number"
     var
         HasItemNo: Query "Pinv number";
     begin
+        Rec.DeleteAll(); // deletes all records in the table
         HasItemNo.Open;
         while HasItemNo.Read do begin
             rec.Init;
-            rec."No." := HasItemNo.No_;
-
+            rec."Document Number" := HasItemNo.No_;
             rec.Insert();
-            //currpage update
+            rec.Next();
+            // CurrPage.Update();// refreshes the page display
         end;
 
     end;
