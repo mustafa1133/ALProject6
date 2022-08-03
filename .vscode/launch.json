@@ -10,7 +10,7 @@
             "serverInstance": "BC",
             "authentication": "UserPassword",
             "schemaUpdateMode": "ForceSync",
-            "startupObjectId": 50138   ,
+            "startupObjectId": 50101   ,
             "startupObjectType": "Page",
             "breakOnError": true,
             "launchBrowser": true,
