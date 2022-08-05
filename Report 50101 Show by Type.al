@@ -4,6 +4,7 @@ report 50101 "Show by Type"
     UsageCategory = ReportsAndAnalysis; // used to determine where report will be listed
     ApplicationArea = Basic;
 
+
     WordLayout = 'Shows by Type.docx';
     DefaultLayout = Word;
     dataset
@@ -16,6 +17,7 @@ report 50101 "Show by Type"
             column(Description_RadioShowType; Description) { IncludeCaption = true; }
             dataitem("Radio Show"; "Radio Show")
             {
+                RequestFilterFields = "No.", Name, "Run Time";
                 DataItemLink = "Radio Show Type" = field(Code);
                 DataItemTableView = sorting("Radio Show Type");
                 PrintOnlyIfDetail = true; // cause radio show record to not be sent for output if child record doesn't exist
