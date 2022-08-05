@@ -10,6 +10,7 @@ report 50101 "Show by Type"
     {
         dataitem("RadioShowType"; "Radio Show Type")
         {
+            RequestFilterFields = "code", Description;
             column(UserComment; UserComment) { }
             column(Code_RadioShowType; Code) { IncludeCaption = true; }
             column(Description_RadioShowType; Description) { IncludeCaption = true; }
