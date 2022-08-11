@@ -8,20 +8,14 @@ report 50133 "Item Number"
 
     dataset
     {
-        dataitem(Sales_Invoice_Header; "Sales Invoice Header")
+        dataitem(Sales_Invoice_Line; "Sales Invoice Line")
         {
-            column(No_; "No.") { }
+            RequestFilterFields = "type", "No.";
+            DataItemTableView = sorting("No.");
+            //PrintOnlyIfDetail = true;
+            column(Item_No; "No.") { IncludeCaption = true; }
+            column(Document_No_; "Document No.") { IncludeCaption = true; }
 
-            dataitem(Sales_Invoice_Line; "Sales Invoice Line")
-            {
-                RequestFilterFields = "No.";
-                DataItemLink = "Document No." = field("No.");
-                PrintOnlyIfDetail = true;
-                column(Item_No; "No.") { }
-
-            }
         }
-
-
     }
 }
