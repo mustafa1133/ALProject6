@@ -2,8 +2,9 @@ report 50133 "Item Number"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = Basic;
-    DefaultLayout = Word;
+
     WordLayout = 'Item Number.docx';
+    DefaultLayout = Word;
 
     dataset
     {
