@@ -12,7 +12,7 @@ report 50133 "Item Number"
         {
             RequestFilterFields = "type", "No.";
             DataItemTableView = sorting("No.");
-            //PrintOnlyIfDetail = true;
+            PrintOnlyIfDetail = true;
             column(Item_No; "No.") { IncludeCaption = true; }
             column(Document_No_; "Document No.") { IncludeCaption = true; }
 
