@@ -8,8 +8,13 @@ table 50140 "Date Formula"
         field(10; "Reference For Date Calculation"; Date)
         {
             trigger OnValidate();
+
+            //var
+            //DateFormulaTest: Codeunit "Date Formula Mgt";
             begin
                 CalculateNewDate();
+                //"Date Result" := DateFormulaTest.CalculateNewDate("Date Formula to Test", "Reference For Date Calculation");
+
             end;
 
 
@@ -17,19 +22,29 @@ table 50140 "Date Formula"
         field(20; "Date Formula to Test"; DateFormula)
         {
             trigger OnValidate();
+            //var
+            //DateFormulaTest: Codeunit "Date Formula Mgt";
+
             begin
                 CalculateNewDate();
+                //"Date Result" := DateFormulaTest.CalculateNewDate("Date Formula to Test", "Reference For Date Calculation");
             end;
 
 
         }
-        field(30; "Date Result"; Date) { }
+        field(30; "Date Result"; Date)
+        {
+
+        }
 
     }
 
+
     local procedure CalculateNewDate()
+    var
+        DateFormMgt: Codeunit "Date Formula Mgt";
     begin
-        "Date Result" := CalcDate("Date Formula to Test", "Reference For Date Calculation");
+        "Date Result" := DateFormMgt.CalculateNewDate("Date Formula to Test", "Reference For Date Calculation");
 
     end;
 }
