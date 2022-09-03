@@ -14,17 +14,19 @@ report 50102 "Fan Promotion List"
             column(Address_2; "Address 2") { }
             column(City; City) { }
             column(Post_Code; "Post Code") { }
+            column(CountryName; CountryName) { }
             column(Country_Region_Code; "Country/Region Code") { }
 
             trigger OnAfterGetRecord()
 
             begin
                 CountryRegion.Get("Country/Region Code");
-                CountryName1 := CountryRegion.Name;
+                CountryName := CountryRegion.Name;
             end;
         }
     }
     var
+
         CountryRegion: Record "Country/Region";
-        CountryName1: Text;
+        CountryName: Text;
 }
