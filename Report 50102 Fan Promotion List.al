@@ -20,8 +20,34 @@ report 50102 "Fan Promotion List"
             trigger OnAfterGetRecord()
 
             begin
+                //Look up the Country Name using the Country/Region Code
                 CountryRegion.Get("Country/Region Code");
                 CountryName := CountryRegion.Name;
+
+                //Calculate the fan's age < in round method rounds down
+                FanAge := Round(((WORKDATE - "Birth Date") DIV 365), 1.0, '<');
+
+                //select Fans to receive promotional material
+                SelectThisFan := FALSE;
+
+                if Age12orLess and (FanAge <= 12) then
+                    SelectThisFan := true;
+                if Age13to18 and (FanAge > 12) and (FanAge < 19) then
+                    SelectThisFan := true;
+                if Age19to34 and (FanAge > 18) and (FanAge < 35) then
+                    SelectThisFan := true;
+                if Age35to50 and (FanAge > 34) and (FanAge < 51) then
+                    SelectThisFan := true;
+                if AgeOver50 and (FanAge > 50) then
+                    SelectThisFan := true;
+                if Male and (Gender = Gender::Male) then
+                    SelectThisFan := true;
+                if Female and (Gender = Gender::Female) then
+                    SelectThisFan := true;
+
+                //if this fan not selected, skip this Fan record on report
+                if SelectThisFan <> true then
+                    CurrReport.Skip();
             end;
         }
     }
@@ -41,7 +67,7 @@ report 50102 "Fan Promotion List"
                     field(Age35to50; Age35to50) { ApplicationArea = Basic; Caption = 'Age 35 to 50'; }
                     field(AgeOver50; AgeOver50) { ApplicationArea = Basic; Caption = 'Age over 50'; }
                     field(Male; Male) { ApplicationArea = Basic; Caption = 'Male'; }
-                    field(Female; Female) { ApplicationArea; Caption = 'Female'; }
+                    field(Female; Female) { ApplicationArea = Basic; Caption = 'Female'; }
 
                 }
             }
