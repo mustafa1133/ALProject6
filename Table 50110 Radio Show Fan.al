@@ -22,7 +22,8 @@ table 50110 "Radio Show Fan"
                 PostCode.ValidatePostCode(City, "Post Code", County, "Country/Region Code", (CurrFieldNo <> 0) AND GuiAllowed);
             end;
         }
-
+        field(110; Gender; Option) { OptionMembers = Male,Female; }
+        field(120; "Birth Date"; Date) { }
 
     }
 

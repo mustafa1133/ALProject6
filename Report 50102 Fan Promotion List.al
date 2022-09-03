@@ -29,4 +29,15 @@ report 50102 "Fan Promotion List"
 
         CountryRegion: Record "Country/Region";
         CountryName: Text;
+        Age12orLess: Boolean;
+        Age13to18: Boolean;
+        Age19to34: Boolean;
+        Age35to50: Boolean;
+        AgeOver50: Boolean;
+        Male: Boolean;
+        Female: Boolean;
+        SelectThisFan: Boolean;
+        FanAge: Integer;
+
+
 }
