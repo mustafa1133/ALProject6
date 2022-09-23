@@ -76,6 +76,7 @@ table 50100 "Radio Show"
             CalcFormula = count("Playlist Line" where("No." = field("No."), Type = const(Item), "Data Format" = const(Advertisement)));
             Editable = false;
         }
+        field(1022; "Ads Required"; Boolean) { }
         field(1030; "News Required"; Boolean) { InitValue = true; } // setting intitial value to true
         field(1040; "News Duration"; Duration) { }
         field(1050; "Sports Required"; Boolean) { InitValue = true; }
