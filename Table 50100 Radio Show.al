@@ -62,7 +62,20 @@ table 50100 "Radio Show"
         }
         field(1000; "Frequency"; Option) { OptionMembers = Hourly,Daily,Weekly,Monthly; }
         field(1010; "PSA Planned Quantity"; Integer) { }
+        field(1011; "PSA Count"; Integer)
+        {
+            FieldClass = FlowField;
+            CalcFormula = count("Playlist Line" where("No." = field("No."), Type = const(Item), "Data Format" = const(PSA)));
+            Editable = false;
+        }
+        field(1012; "PSAs Required"; Boolean) { }
         field(1020; "Ads Planned Quantity"; Integer) { }
+        field(1021; "Ads Count"; Integer)
+        {
+            FieldClass = FlowField;
+            CalcFormula = count("Playlist Line" where("No." = field("No."), Type = const(Item), "Data Format" = const(Advertisement)));
+            Editable = false;
+        }
         field(1030; "News Required"; Boolean) { InitValue = true; } // setting intitial value to true
         field(1040; "News Duration"; Duration) { }
         field(1050; "Sports Required"; Boolean) { InitValue = true; }

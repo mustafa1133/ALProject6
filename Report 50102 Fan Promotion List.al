@@ -32,22 +32,6 @@ report 50102 "Fan Promotion List"
                 //select Fans to receive promotional material
                 SelectThisFan := FALSE;
 
-                case FanAge of
-                    FanAge <= 12 and Age12orLess = true:
-                        SelectThisFan := true;
-                    FanAge > 12 and FanAge < 19 and Age13to18 = true:
-                        SelectThisFan := true;
-                    FanAge > 18 and FanAge < 35 and Age19to34 = true:
-                        SelectThisFan := true;
-                    FanAge > 34 and FanAge < 51 and Age35to50 = true:
-                        SelectThisFan := true;
-                    FanAge > 50 and AgeOver50:
-                        SelectThisFan := true;
-
-
-
-                end;
-
                 if Age12orLess and (FanAge <= 12) then
                     SelectThisFan := true;
                 if Age13to18 and (FanAge > 12) and (FanAge < 19) then
