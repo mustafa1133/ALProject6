@@ -27,6 +27,11 @@ page 50103 "Playlist Document List"
                 field("Broadcast Date"; "Broadcast Date") { ApplicationArea = Basic; }
                 field("Duration"; "Duration") { ApplicationArea = Basic; }
             }
+            part(Lines; "Playlist Subpage") //connecting 2 tables in a single document header and lines
+            {
+                SubPageLink = "Document No." = field("No.");
+                SubPageView = sorting("Document No.", "Line No.");
+            }
         }
     }
 }
