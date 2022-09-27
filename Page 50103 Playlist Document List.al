@@ -1,8 +1,8 @@
 page 50103 "Playlist Document List"
 {
-    PageType = List;
+    PageType = Document;
     SourceTable = "Playlist Header";
-    UsageCategory = Lists;
+    UsageCategory = Documents;
     ApplicationArea = Basic;
 
 
