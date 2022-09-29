@@ -1,7 +1,6 @@
 table 50103 "Playlist Line"
 {
 
-
     fields
     {
         field(1; "Document No."; Code[20]) { }
@@ -9,11 +8,36 @@ table 50103 "Playlist Line"
         field(10; "Type"; Option) { OptionMembers = ,Resource,Show,Item; }
         field(20; "No."; Code[20])
         {
-            TableRelation = IF (Type = const(Resource)) Resource."No."
-            ELSE
-            IF (Type = const(Show)) "Radio Show"."No."
-            ELSE
-            IF (Type = const(Item)) Item."No.";
+
+            trigger OnValidate()
+            var
+                Res: Record Resource;
+                Item: Record item;
+                RadioShow: Record "Radio Show";
+            begin
+                case Type of
+                    Type::Resource:
+                        begin
+                            Res.Get("No.");
+                            Description := Res.Name;
+                        end;
+                    Type::Item:
+                        begin
+                            Item.Get("No.");
+                            Description := Item.Description;
+                            "Data Format" := Item."Data Format";
+                            Duration := Item.Duration;
+                        end;
+
+                    Type::Show:
+                        begin
+                            RadioShow.Get("No.");
+                            Description := RadioShow.Name;
+                        end;
+
+
+                end;
+            end;
         }
         field(30; "Data Format"; Option) { OptionMembers = ,Vinyl,CD,MP3,PSA,Advertisement; }
         field(40; "Publisher"; Code[10]) { }
@@ -22,8 +46,22 @@ table 50103 "Playlist Line"
         {
             Editable = false;
         }
-        field(70; "Start Time"; Time) { }
-        field(80; "End Time"; Time) { }
+        field(70; "Start Time"; Time)
+        {
+            trigger OnValidate();
+            begin
+                if Duration <> 0 then
+                    "End Time" := "Start Time" + Duration;
+            end;
+        }
+        field(80; "End Time"; Time)
+        {
+            trigger OnValidate();
+            begin
+                if "Start Time" <> 0T then // 0T uses Time 
+                    Duration := "End Time" - "Start Time";
+            end;
+        }
 
     }
 

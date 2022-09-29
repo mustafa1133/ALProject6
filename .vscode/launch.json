@@ -6,7 +6,7 @@
             "request": "launch",
             "type": "al",
             "environmentType": "OnPrem",
-            "server": "http://BC18",
+            "server": "http://bc20",
             "serverInstance": "BC",
             "authentication": "UserPassword",
             "schemaUpdateMode": "ForceSync",
