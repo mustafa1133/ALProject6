@@ -49,6 +49,9 @@ table 50102 "Playlist Header"
         field(100; "Sports Required"; Boolean) { }
         field(110; "Weather Required"; Boolean) { }
 
+        field(120; "Ads Count"; Integer) { }
+        field(130; "PSA Count"; Integer) { }
+
     }
 
     procedure NWSRequired(Category: Option ,News,Weather,Sports): Integer
