@@ -41,7 +41,7 @@ table 50100 "Radio Show"
         field(120; "Advertising Revenue"; Decimal)
         {
             Editable = false;
-            FieldClass = FlowField;
+            FieldClass = FlowField; // flow field
             CalcFormula = sum("Radio Show Entry"."Fee Amount" // summing revenue and putting a filter set to Advertisement
             where(
                 "Radio Show No." = field("No."),
